@@ -1,4 +1,6 @@
+//@ts-nocheck
 /* eslint-disable react/jsx-key */
+
 import React, { Fragment, useState, useEffect } from "react";
 
 import Header from "@/components/header/header";
@@ -13,6 +15,7 @@ import {
   TrashIcon,
   PencilSquareIcon,
 } from "@heroicons/react/24/outline";
+import { waitForDebugger } from "inspector";
 
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(" ");
@@ -42,9 +45,13 @@ export default function Profile(): JSX.Element {
       // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
       const returnCode = CreateNotebook(newNotebookName, user);
       if (returnCode === 0) {
-        void router.push("/notebook");
+        void router.push("/overview");
+        const timeout = setTimeout(() => {
+          void ReadNotebooks(user).then((notebooks) => {
+            setNotebooks(notebooks);
+          })
+        })
       }
-      setNewNotebookname("");
     }
   };
 
@@ -173,8 +180,8 @@ export default function Profile(): JSX.Element {
                   <div className="flex flex-row">
                     <PencilSquareIcon className="rounded-lg w-8 h-8 mr-2" />
                     <div className="inline-block">
-                    <h1 className="text-xl font-bold inline-block">{notebook.name}</h1> ‎<br />‎
-                    <div className="text-lg inline-block">{new Date(notebook.created.seconds * 1000).toLocaleDateString("ro-RO")}</div>
+                      <h1 className="text-xl font-bold inline-block">{notebook.name}</h1> ‎<br />‎
+                      <div className="text-lg inline-block">{new Date(notebook.created.seconds * 1000).toLocaleDateString("ro-RO")}</div>
                     </div>
                   </div>
                   {/* <div className="flex flex-row">
