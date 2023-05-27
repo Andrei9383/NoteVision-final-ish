@@ -61,6 +61,9 @@ Sistem de operare: Windows 7, Windows 8, Windows 8.1, Windows 10 sau mai recent.
 Procesor: Intel Pentium 4 sau mai recent.
 RAM: 4 GB (recomandat)
 
+## Rolul fiecaruia in crearea site-ului
+Serban: design, crearea paginilor de Home, About, Contact, designul paginii de Overview, functionalitate NavBar ( Header )
+Andrei: functionalitate, crearea paginii de Notebook, MindMap, design general, design si functionalitate Footer
 
 ### Bibliografie
 <ul>
