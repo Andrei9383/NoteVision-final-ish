@@ -12,7 +12,7 @@
     "@excalidraw/excalidraw": "^0.15.2",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
-    "@mantine/core": "^6.0.9",
+    "@mantine/core": "^6.0.11",
     "@mantine/hooks": "^6.0.9",
     "@mantine/tiptap": "^6.0.9",
     "@material-tailwind/react": "^2.0.1",
